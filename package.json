@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/H-Mehmood/CRUD-FIREBASE-NODEJS/issues"
   },
-  "homepage": "https://github.com/H-Mehmood/CRUD-FIREBASE-NODEJS#readme"
+  "homepage": "https://github.com/H-Mehmood/CRUD-FIREBASE-NODEJS#readme",
+  "dependencies": {
+    "firebase": "^11.4.0"
+  }
 }
