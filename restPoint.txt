@@ -1,0 +1,34 @@
+### GET FRIENDs
+GET http://localhost:8500/friends
+
+### GET FRIEND
+GET http://localhost:8500/friends/james
+
+
+### ADD A FRIEND
+POST http://localhost:8500/addfriend
+Content-Type: application/json
+
+{
+    "name": "Zain Ali",
+    "status": "Friend"
+}
+
+### UPDATE STATUS OF A FRIEND
+PATCH http://localhost:8500/changestatus
+Content-Type: application/json
+
+{
+    "name": "Salman",
+    "newStatus": "No Friend"
+}
+
+
+###DELETE A FRIEND
+DELETE http://localhost:8500/friends
+Content-Type: application/json
+
+{
+    "name": "Salman"
+}
+
