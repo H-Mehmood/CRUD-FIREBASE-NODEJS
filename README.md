@@ -9,11 +9,15 @@
 # 4. Setup firebase credentials and Port number in the .env file
 
 
-# Add USER END POINT WITH TEST DATA 
-#   POST http://localhost:{port}/addUser
+# ADD USER END POINT WITH TEST DATA 
+#   POST: http://localhost:{port}/addUser
 #   {
 #       "name": "John Doe",
 #       "status": "Active",
 #       "age": 32,
 #       "profession": "Software Engineer"
 #    }
+
+
+# GET ALL USERS FROM THE COLLECTIONS
+#   GET:  http://localhost:4343/getUsers
