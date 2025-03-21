@@ -11,6 +11,7 @@ const firebaseConfig = {
     messagingSenderId:  process.env.MESSAGE_SENDER_ID,
     appId:  process.env.APP_ID
   };
-const app = initializeApp(firebaseConfig);
+const firebaseApp = initializeApp(firebaseConfig)
+const port = process.env.PORT
 
-export default app;
+export {firebaseApp, port};

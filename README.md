@@ -7,3 +7,13 @@
 # 3.  If it’s not installed, run
 #   npm install dotenv
 # 4. Setup firebase credentials and Port number in the .env file
+
+
+# Add USER END POINT WITH TEST DATA 
+#   POST http://localhost:{port}/addUser
+#   {
+#       "name": "John Doe",
+#       "status": "Active",
+#       "age": 32,
+#       "profession": "Software Engineer"
+#    }
