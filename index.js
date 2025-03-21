@@ -1,5 +1,5 @@
 import {firebaseApp, port} from "./firebase.js";
-import {getFirestore, collection, doc, setDoc, addDoc, getDocs, getDoc, updateDoc} from "firebase/firestore";
+import {getFirestore, collection, doc, setDoc, addDoc, getDocs, getDoc, updateDoc, deleteDoc} from "firebase/firestore";
 import express from "express";
 
 const DB = getFirestore(firebaseApp);
@@ -72,6 +72,20 @@ app.put('/updateUser/:id', async (req, res) => {
         await updateDoc(userRef, { name, status, age, profession });
 
         return res.status(200).json({ message: "User updated successfully!" });
+    } catch (err) {
+        console.error("Error:", err);
+        return res.status(500).json({ error: err.message });
+    }
+});
+
+// DELETE USER
+app.delete('/deleteUser/:id', async (req, res) => {
+    try {
+        const userId = req.params.id;
+        const userRef = doc(DB, "users", userId);
+
+        await deleteDoc(userRef);
+        return res.status(200).json({ message: "User deleted successfully!" });
     } catch (err) {
         console.error("Error:", err);
         return res.status(500).json({ error: err.message });

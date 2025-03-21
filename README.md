@@ -27,3 +27,6 @@
 
 # UPDATE SPECIFIC USER FROM THE COLLECTION
 #   PUT:  http://localhost:{port}/updateUser/{DOCUMENT_ID}
+
+# DELETE SPECIFIC USER FROM THE COLLECTION
+#   PUT:  http://localhost:{port}/deleteUser/{DOCUMENT_ID}
