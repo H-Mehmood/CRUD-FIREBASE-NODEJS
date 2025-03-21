@@ -20,4 +20,7 @@
 
 
 # GET ALL USERS FROM THE COLLECTIONS
-#   GET:  http://localhost:4343/getUsers
+#   GET:  http://localhost:{port}/getUsers
+
+# GET SPECIFIC USER FROM THE COLLECTION
+#   GET:  http://localhost:{port}/getUsers/{DOCUMENT_ID}
