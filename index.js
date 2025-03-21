@@ -1,5 +1,5 @@
 import {firebaseApp, port} from "./firebase.js";
-import {getFirestore, collection, doc, setDoc, addDoc, getDocs, getDoc} from "firebase/firestore";
+import {getFirestore, collection, doc, setDoc, addDoc, getDocs, getDoc, updateDoc} from "firebase/firestore";
 import express from "express";
 
 const DB = getFirestore(firebaseApp);
@@ -46,7 +46,7 @@ app.get('/getUsers', async (req, res) => {
 //  Get a Single user by ID 
 app.get('/getUser/:id', async (req, res) => {
     try {
-        console.log(req)
+        console.log(req.params)
         const userId = req.params.id;
         const userRef = doc(DB, "users", userId);
         const userSnap = await getDoc(userRef);
@@ -62,5 +62,20 @@ app.get('/getUser/:id', async (req, res) => {
     }
 });
 
+// //  UPDATE USER
+app.put('/updateUser/:id', async (req, res) => {
+    try {
+        const userId = req.params.id;
+        const { name, status, age, profession } = req.body;
+
+        const userRef = doc(DB, "users", userId);
+        await updateDoc(userRef, { name, status, age, profession });
+
+        return res.status(200).json({ message: "User updated successfully!" });
+    } catch (err) {
+        console.error("Error:", err);
+        return res.status(500).json({ error: err.message });
+    }
+});
 
 app.listen(port, () => console.log(`Server has started on port: ${port}`))

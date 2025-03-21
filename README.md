@@ -24,3 +24,6 @@
 
 # GET SPECIFIC USER FROM THE COLLECTION
 #   GET:  http://localhost:{port}/getUsers/{DOCUMENT_ID}
+
+# UPDATE SPECIFIC USER FROM THE COLLECTION
+#   PUT:  http://localhost:{port}/updateUser/{DOCUMENT_ID}
